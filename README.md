@@ -9,4 +9,4 @@ Raghav K. Chhetri, 12-22-2020
 
 - Majority of tasks successfully compiled and run 
   
-- *(work in progress)* tasks (5,6,8); complex tasks (3,4)
+- *(work in progress)* tasks 5 and 6

@@ -1,9 +1,9 @@
-/*
 package net.imglib2.i2k2020.intro.tasks
 
 import bdv.util.BdvFunctions
 import bdv.util.BdvOptions
 import bdv.util.BdvStackSource
+import bdv.viewer.DisplayMode
 import ij.IJ
 import ij.ImageJ
 import net.imglib2.RandomAccessibleInterval
@@ -44,7 +44,14 @@ object ComplexTask_KT3_MeanFilter {
         var mean: RandomAccessibleInterval<S> = Converters.convert(
             ComplexTask_KT2_Gradient.shiftInverseMirrored(img, translation),
             ComplexTask_KT2_Gradient.shiftMirrored(img, translation),
-            { i1, i2, o -> o.setReal(i1.getRealDouble() + i2.getRealDouble()) },
+            { i1, i2, o ->
+                if (i1 != null) {
+                    if (i2 != null) {
+                        o?.setReal(i1.getRealDouble() + i2.getRealDouble())
+                    }
+                }
+            },
+            //{ i1, i2, o -> o.setReal(i1.getRealDouble() + i2.getRealDouble()) },
             type
         )
 
@@ -102,9 +109,12 @@ object ComplexTask_KT3_MeanFilter {
         var bdv: BdvStackSource<*>
         bdv = BdvFunctions.show(img, "input")
         bdv = BdvFunctions.show(meanFilter3(img, precision), "mean 3x3x3", BdvOptions().addTo(bdv))
-        bdv.bdvHandle.viewerPanel.setDisplayMode(bdv.viewer.DisplayMode.SINGLE)
+        bdv.bdvHandle.viewerPanel.setDisplayMode(DisplayMode.SINGLE)
+        //bdv.bdvHandle.viewerPanel.setDisplayMode(bdv.viewer.DisplayMode.SINGLE)
         bdv.setDisplayRange(0.0, 255.0)
         bdv.setCurrent()
     }
 }
-*/
+
+// Added "null checks" (lines 47-54)
+// Replaced bdv.viewer.DisplayMode.SINGLE by DisplayMode.SINGLE (lines 112-113)

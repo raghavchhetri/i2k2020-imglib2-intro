@@ -60,7 +60,7 @@ object KT6_Viewing {
         val img3: Img<UnsignedByteType> = ImagePlusImgs.from(IJ.openImage("http://imagej.nih.gov/ij/images/blobs.gif"))
         var bdv2: BdvStackSource<*>? = BdvFunctions.show(img3, "2d UnsignedByteType image", BdvOptions().is2D)
 
-        // display cloun example (RGB)
+        // display clown example (RGB)
         val img4: Img<ARGBType> = ImagePlusImgs.from(IJ.openImage("http://imagej.nih.gov/ij/images/clown.jpg"))
         bdv2 = BdvFunctions.show(img4, "2d ARGBType image", BdvOptions().is2D.addTo(bdv2))
     }

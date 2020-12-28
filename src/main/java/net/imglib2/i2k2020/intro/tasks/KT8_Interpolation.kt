@@ -3,6 +3,7 @@ package net.imglib2.i2k2020.intro.tasks
 import bdv.util.BdvFunctions
 import bdv.util.BdvOptions
 import bdv.util.BdvStackSource
+import bdv.viewer.DisplayMode
 import ij.IJ
 import net.imglib2.FinalInterval
 import net.imglib2.Interval
@@ -59,6 +60,7 @@ object KT8_Interpolation {
 
         // enable single-source mode
         //bdv.bdvHandle.viewerPanel.setDisplayMode(bdv.viewer.DisplayMode.SINGLE)
+        bdv.bdvHandle.viewerPanel.setDisplayMode(DisplayMode.SINGLE)
     }
 
     @JvmStatic
@@ -69,4 +71,4 @@ object KT8_Interpolation {
         interpolation(blobs)
     }
 }
-//Note: line 61 disabled-- bdv.viewer
+//Note: Replaced bdv.viewer.DisplayMode.SINGLE by DisplayMode.SINGLE (lines 62-63)

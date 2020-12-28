@@ -8,6 +8,7 @@ import net.imglib2.type.NativeType
 import net.imglib2.type.numeric.NumericType
 import net.imglib2.type.numeric.RealType
 import net.imglib2.type.numeric.integer.UnsignedByteType
+import ucar.units.StandardUnitFormatConstants.T
 import java.io.IOException
 
 object KT5_OpenAndSave {
@@ -21,7 +22,7 @@ object KT5_OpenAndSave {
 
         // open as NumericType
         val img: Img<T> = ImagePlusImgs.from(IJ.openImage(imgFN))
-        //println("Type=" + img.firstElement().javaClass.getName())
+        println("Type=" + img.firstElement().javaClass.getName())
     }
 
     /**
@@ -68,8 +69,8 @@ object KT5_OpenAndSave {
     fun <T> main(args: Array<String>) where T : RealType<T>?, T : NativeType<T>? {
 
         // open generic images using ImageJ
-        //testNumericTypeOpening()
-        //testRealTypeOpening()
+        testNumericTypeOpening()
+        testRealTypeOpening()
 
         // open specifically types images using ImageJ
         testUnsignedByteTypeOpening()
@@ -84,3 +85,4 @@ object KT5_OpenAndSave {
     }
 }
 //Note: Lines 24, 37, 63 disabled-- img.firstElement().javaClass
+//Not enough information to infer type variable T

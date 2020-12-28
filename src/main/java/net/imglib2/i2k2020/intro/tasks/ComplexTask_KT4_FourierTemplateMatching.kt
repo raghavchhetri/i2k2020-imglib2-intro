@@ -1,4 +1,3 @@
-/*
 package net.imglib2.i2k2020.intro.tasks
 
 import ij.IJ
@@ -108,7 +107,8 @@ object ComplexTask_KT4_FourierTemplateMatching {
         val ra = img.randomAccess()
         for (i in 0..499) {
             for (d in 0 until img.numDimensions()) ra.setPosition(rnd.nextInt(img.dimension(d).toInt()), d)
-            ra.get().add(FloatType(100))
+            //ra.get().add(FloatType(100))
+            ra.get().add(FloatType())
         }
         ImageJFunctions.show(img).title = "image"
 
@@ -216,4 +216,5 @@ object ComplexTask_KT4_FourierTemplateMatching {
         simulate()
     }
 }
-*/
+//Changed ra.get().add(FloatType(100)) to ra.get().add(FloatType())
+//line 110-111
