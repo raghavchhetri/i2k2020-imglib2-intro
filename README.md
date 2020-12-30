@@ -1,12 +1,9 @@
-# Introduction to ImgLib2 & BigDataViewer Tutorial
-
-This contains the source code for the I2K tutorial. Please clone this repository into your workspace and import it as existing Maven project. The code contains two packages "tasks" and "solution". During the tutorial we will work with the tasks package, the solution package contains full example implementations.
-
-### Modifications (*exploratory*)
+### Accessing ImgLib2 & BigDataViewer using Kotlin (*Exploratory*)
 Raghav K. Chhetri, 12-22-2020
 
-- Tutorial solutions in Kotlin
+This project contains solutions for the i2k-2020-imglib2-intro in Kotlin. Able to compile and run all tasks except for *(work in progress)* tasks 5 and 6
 
-- Majority of tasks successfully compiled and run 
-  
-- *(work in progress)* tasks 5 and 6
+Project configured as:
+```
+Configure Kotlin with Java with Maven >> all modules >> Kotlin compiler and runtime version: kotlinc-jvm 1.4.21 (JRE 15.0.1)
+```
